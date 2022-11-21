@@ -36,27 +36,53 @@
   
   <body>
     
-    <!--Navigation Bar at the top-->
-    
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Family Communication System</span>
+  <!--Navigation Bar, hard-coded at the moment-->
+  <nav class="navbar navbar-dark bg-dark"> <!--set the bar to black background-->
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="to-do.html">&#8592 Back</a>
+      
+      <!--User Logo, including Dropdown Menu-->
+      <div class="dropdown text-end">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="images/logo.png" alt="User Profile" width="35" height="35">
+          <span class="badge bg-danger badge-dot">1</span> <!--Notification badge-->
+        </a>
+
         
-        <!--User Logo-->
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="images/logo.png" alt="User Profile" width="35" height="35">
-          </a>
-          <ul class="dropdown-menu">
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
+        <!--Dropdown Menu-->
+        <div class="dropdown-menu dropdown-menu-end">
+          <li><span class="dropdown-item h5">User</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal">
+            Notifications <span class="badge bg-danger">1</span></a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="index.html">Log Out</a></li>
         </div>
 
-        <!--Dropdown-->
-
-      </div>
-    </nav>
+        <!--Effects when clicking the Notification Button using .modal-->
+        <div class="modal fade" id="notificationModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!--Title and Close Button-->
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Notification(s)</h1>
+              </div>
+              
+              <!--Notification contents, hard-coded at the moment-->
+              <div class="modal-body text-start">
+                Don't forget to buy orange juice tomorrow at Costco @Mom
+              </div>
+              
+              <!--Close Button at the bottom-->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </nav>
     
     <!--Dashboard-->
     <div class="container px- py-5">
