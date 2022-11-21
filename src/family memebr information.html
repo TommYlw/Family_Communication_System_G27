@@ -1,69 +1,214 @@
-<!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Family Communication System</title>
+    <script type="text/javascript">
+      var person1 = [
+      'Name: Sara\n Age: 19\n Work/School Location: \n Current Status: \n Current Location: \n',     
+      ]
+      var person2 = [
+      'Name: Jack\n Age: 15\n Work/School Location: \n Current Status: \n Current Location: \n',
+      ]
+      var person3 = [
+      'Name: Ben\n Age: 48\n Work/School Location: \n Current Status: \n Current Location: \n',
+      ]
+      var person4 = [
+      'Name: Jess\n Age: 46\n Work/School Location: \n Current Status: \n Current Location: \n'
+      ]
+      function info1() {
+        document.getElementById('doThis').innerHTML = '';
+        document.getElementById('doThis').innerHTML = person1;
+
+      }
+      function info2() {
+        document.getElementById('doThis').innerHTML = '';
+        document.getElementById('doThis').innerHTML = person2;
+      }
+      function info3() {
+        document.getElementById('doThis').innerHTML = '';
+        document.getElementById('doThis').innerHTML = person3;
+
+      }
+      function info4() {
+        document.getElementById('doThis').innerHTML = '';
+        document.getElementById('doThis').innerHTML = person4;
+      }
+    </script>    <!--Import Bootstrap-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  </head>
+  
 <style>
 body {margin:0}
-
+    
 .icon-bar {
-  width: 180px;
-  background-color: #555;
+    width: 180px;
+    background-color: rgb(94, 59, 59);
 }
 
 .icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 40px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 60px;
+    display: block;
+    text-align: center;
+    padding: 8px;
+    transition: all 0.3s ease;
+    color: rgb(0, 0, 0);
+    font-size: 60px;
 }
 
 .icon-bar a:hover {
-  background-color: #000;
+    background-color: rgb(255, 255, 255);
 }
 
 .first {
-  width: 180px;
-  float:left;
-  height: 100px;
-  border: 1px solid #3B6273;
+    width: 180px;
+    float:left;
+    height: 100px;
+    border: 1px solid #3B6273;
 }
 .second {
-  width: 400px;
-  float:left;
-  height: 793px;
-  border: 1px solid #3B6273;
+    width: 400px;
+    float:left;
+    height: 793px;
+    border: 0px solid #3B6273;
+
 }
 
+.centerImage {
+  text-align:center;
+  display:block;
+  margin:auto;
+} 
 
+.side {
+  text-align: right;
+}
+
+.button {
+      all: unset;
+      cursor: pointer;
+    }
+
+.info {
+  padding: 8px;
+  margin: 25px;
+  
+  /* other styling */
+  background-color: #000000;
+  border-radius: 10px;
+  color: white;
+  font-family: Avenir;
+  height: 720px;
+  width: 450px;
+  font-size: 20px;
+  line-height: 6;
+}
 
 </style>
-<body>
-    <header>
-      <h1>Family member information</h1>
-    </header>
-<div class="first"> 
-<div class="icon-bar">
-  
-  <a href="#"><i class="fa fa-user"></i></a> 
-  <a href="#"><i class="fa fa-user"></i></a> 
-  <a href="#"><i class="fa fa-user"></i></a>
-  <a href="#"><i class="fa fa-user"></i></a> 
-  <a href="#"><i class="fa fa-save"></i></a> 
-</div>
-</div>
-<div class="second"> 
-<article>
-  <header>
-    <p>Name:</p>
-    <p>Age:</p>
-    <p>Role:</p>
-    <p>Work Location/School:</p>
-    <p>Current Status:</p>
-    <p>Current Location:</p>
-  </header>
-</article>
-</div>
-</body>
-</html> 
+
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1" href="mainPage.html">Home</a>
+        
+        <!--User Logo, including Dropdown Menu-->
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="images/logo.png" alt="User Profile" width="35" height="35">
+            <span class="badge bg-danger badge-dot">1</span>
+          </a>
+
+          
+          <div class="dropdown-menu dropdown-menu-end">
+            <li><span class="dropdown-item h5">User</span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal">
+              Notifications <span class="badge bg-danger badge-dot">1</span></a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+          </div>
+
+          <!--Effects when clicking the Notification Button using .modal-->
+          <div class="modal fade" id="notificationModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!--Title and Close Button-->
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Notification(s)</h1>
+                </div>
+                <!--Notification contents, hard-coded at the moment-->
+                <div class="modal-body text-start">
+                  Don't forget to buy orange juice tomorrow at Costco @Mom
+                </div>
+                <!--Close Button at the bottom-->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </nav>
+    
+    <div class="container px- py-5" id="icon-grid">
+      <h2 class="pb-2 border-bottom"><center>Family Members' Information</center></h2>
+      <div class="row">
+
+        <div class="col">
+
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div>
+            <input type="image" src="images/user.png" height="150" width="150" class="centerImage">
+            <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Sara</h3>
+          </div>
+        
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div>
+            <input type="image" src="images/user.png" height="150" width="150" class="centerImage">
+            <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Jack</h3>
+          </div>
+
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div>
+            <input type="image" src="images/user.png" height="150" width="150" class="centerImage">
+            <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Ben</h3>
+          </div>
+
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div>
+            <input type="image" src="images/user.png" height="150" width="150" class="centerImage" onclick="person1()">
+            <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Jess</h3>
+          </div>
+
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div>
+            <input type="image" src="images/edit.png" height="50" width="50" class="centerImage" onclick="person1()">
+          </div>
+
+        </div>
+
+        <div class="col">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div class="info">
+            <p>
+              <b>Name: </b>Sara <br>
+              <b>Age: </b>19 <br>
+              <b>Work/School Location: </b>1280 Newcastle Rd <br>
+              <b>Current Status: </b>Busy <br>
+              <b>Current Location: </b>N/A <br>   
+            </p>
+          </div>
+        </div>
+          
+      </div>
+      </div>
+   
+    
+    <!--Import Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  </body>
+</html>
