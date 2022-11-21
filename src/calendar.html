@@ -13,6 +13,12 @@
       }
 
       function loadEvent (){
+                //Add event listeners to checkboxes
+        document.getElementById("cb1").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb2").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb3").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb4").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb5").addEventListener('change', onCheckboxChange);
         var url = new URL(window.location.href);
         var title = url.searchParams.get("title");
         var day = url.searchParams.get("day");
@@ -22,12 +28,7 @@
         newEvent.className = calType;
         newEvent.innerHTML = title;
         document.getElementById(day).appendChild(newEvent);
-        //Add event listeners to checkboxes
-        document.getElementById("cb1").addEventListener('change', onCheckboxChange);
-        document.getElementById("cb2").addEventListener('change', onCheckboxChange);
-        document.getElementById("cb3").addEventListener('change', onCheckboxChange);
-        document.getElementById("cb4").addEventListener('change', onCheckboxChange);
-        document.getElementById("cb5").addEventListener('change', onCheckboxChange);
+
       }
 
       function onCheckboxChange(event) {
