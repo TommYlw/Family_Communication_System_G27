@@ -90,25 +90,49 @@
   
   <body>
     
-    <!--Navigation Bar at the top-->
-    
+    <!--Navigation Bar-->
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Family Communication System</span>
+        <a class="navbar-brand mb-0 h1" href="mainPage.html">Home</a>
         
-        <!--User Logo-->
+        <!--User Logo, including Dropdown Menu-->
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="images/logo.png" alt="User Profile" width="35" height="35">
+            <span class="badge bg-danger badge-dot">1</span>
           </a>
-          <ul class="dropdown-menu">
+
+          
+          <!--Dropdown Menu-->
+          <div class="dropdown-menu dropdown-menu-end">
+            <li><span class="dropdown-item h5">User</span></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal">
+              Notifications <span class="badge bg-danger badge-dot">1</span></a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+          </div>
 
-        <!--Dropdown-->
-
+          <!--Effects when clicking the Notification Button using .modal-->
+          <div class="modal fade" id="notificationModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!--Title and Close Button-->
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Notification(s)</h1>
+                </div>
+                <!--Notification contents, hard-coded at the moment-->
+                <div class="modal-body text-start">
+                  Don't forget to buy orange juice tomorrow at Costco @Mom
+                </div>
+                <!--Close Button at the bottom-->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </nav>
 
@@ -125,7 +149,7 @@
         <div class="boxed">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
           <div>
-            <img src="familysettings.png" alt="family setting" style="height:120px;">
+            <img src="images/familysettings.png" alt="family setting" style="height:120px;">
             <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Switch Family</h3>
             <br>
               <SELECT>
@@ -139,7 +163,7 @@
         <div class="boxed2">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"/></svg>
           <div> 
-            <img src="notificationssettings.png" alt="notification setting" style="height:120px;" class="centerImage">
+            <img src="images/notificationssettings.png" alt="notification setting" style="height:120px;" class="centerImage">
             <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Notifications</h3>
             <br> 
             <div>
@@ -156,7 +180,7 @@
         <div class="boxed">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"/></svg>
           <div>
-            <img src="darkmodesettings.png" alt="dark mode" style="height:120px;">
+            <img src="images/darkmodesettings.png" alt="dark mode" style="height:120px;">
             <h3 class="fw-bold mb-0 fs-4">Dark Mode</h3>
             <br> 
             <label class="switch">
@@ -171,7 +195,7 @@
         <div class="boxed">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
           <div>
-            <img src="updateloginsettings.png" alt="update login setting" style="height:120px;">
+            <img src="images/updateloginsettings.png" alt="update login setting" style="height:120px;">
             <h3 class="fw-bold mb-0 fs-4">Update Login</h3>
             <br> 
             <label for="Old Password">Old Password:</label>
