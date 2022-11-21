@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Family Communication System</title>
+    <!--Import Bootstrap-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    
+    <!--Navigation Bar at the top-->
+    
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Family Communication System</span>
+        
+        <!--User Logo-->
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="images/logo.png" alt="User Profile" width="35" height="35">
+          </a>
+          <ul class="dropdown-menu">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+
+        <!--Dropdown-->
+
+      </div>
+    </nav>
+    
+    <!--Dashboard-->
+    <div class="container px- py-5">
+      <!--Heading-->
+      <div class="container-fluid">
+        <h2 class="pb-2 float-left">Shared Documents</h2>
+        <button type="button" class="btn btn-primary float-right" onclick="location.href = 'to-do-editor-new.html';">New Document</button>
+        <hr />
+        
+      </div>
+        <div class="list-group">
+          <a href="to-do-editor-1.html" class="list-group-item">
+            <h4 class="list-group-item-heading">Grocery List</h4>
+            <p class="list-group-item-text">Last modified by Mom 2 hours ago</p>
+          </a>
+          <a href="to-do-editor-2.html" class="list-group-item">
+            <h4 class="list-group-item-heading">House Chores</h4>
+            <p class="list-group-item-text">Last modified by you 3 days ago</p>
+          </a>
+          <a href="to-do-editor-3.html" class="list-group-item">
+            <h4 class="list-group-item-heading">Dinner Restaurant Suggestions</h4>
+            <p class="list-group-item-text">Last modified by John 33 minutes ago</p>
+          </a>
+        </div>        
+      </div>
+    </div>
+    
+    <!--Import Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  </body>
+</html>
