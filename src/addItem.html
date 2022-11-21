@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Family Communication System</title>
+    <!--Import Bootstrap-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="import" href="calendar.html">
+
+    <script type="text/javascript">
+        function save() {
+            var title=document.getElementById('Title').value;
+            localStorage.setItem("text", title); // save the item
+            var addtype=document.getElementById('Type').value;
+            localStorage.setItem("text", addType); // save the item
+            var addtype=document.getElementById('Type').value;
+            localStorage.setItem("text", addType); // save the item
+            var calendaroption=document.getElementById('Calender Option').value;
+            localStorage.setItem("text", calendaroption); // save the item
+            var location=document.getElementById('Location').value;
+            localStorage.setItem("text", location); // save the item
+            var additionalinfo=document.getElementById('Additional Information').value;
+            localStorage.setItem("text", additionalinfo); // save the item
+        }
+
+        function addFunction (){
+            //document.getElementById("addedEvent").style.visibility = 'visible';
+            window.location.href='calendar.html';
+        }
+    </script>
+
+    <style>
+        .col{
+          border: 1px solid rgb(0, 0, 0) ;
+          text-align: left;
+          height: 90px;
+        }
+        .button{
+          text-align: left;
+          margin: 10px;
+          height: 90px;
+        }
+       
+        .users {
+          text-align: center;
+        }
+        #cb1 {
+          accent-color: #c09cce;
+        }
+        
+        #cb2 {
+          accent-color: #81a1c2;
+        }
+        
+        #cb3 {
+          accent-color: #c76358;
+        } 
+
+        #cb4 {
+          accent-color: #87d77d;
+        }
+  
+        #cb5 {
+          accent-color: #e1d774;
+        } 
+  
+      </style>
+
+
+  </head>
+  
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Family Communication System</span>
+        
+        <!--User Logo, including Dropdown Menu-->
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="images/logo.png" alt="User Profile" width="35" height="35">
+            <span class="badge bg-danger badge-dot">1</span>
+          </a>
+
+          
+          <!--Dropdown Menu-->
+          <div class="dropdown-menu dropdown-menu-end">
+            <li><span class="dropdown-item h5">User</span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal">
+              Notifications <span class="badge bg-danger badge-dot">1</span></a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+          </div>
+
+          <!--Effects when clicking the Notification Button using .modal-->
+          <div class="modal fade" id="notificationModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!--Title and Close Button-->
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Notification(s)</h1>
+                </div>
+                <!--Notification contents, hard-coded at the moment-->
+                <div class="modal-body text-start">
+                  Don't forget to buy orange juice tomorrow at Costco @Mom
+                </div>
+                <!--Close Button at the bottom-->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </nav>
+
+    
+    
+    
+    <!--Dashboard-->
+    <div class="container px- py-5" id="icon-grid">
+      <!--Heading-->
+      <h2 class="pb-2 border-bottom">Add Item</h2>
+
+      <div>
+        <label for="Title">Title:</label>
+        <input type="text" id="Title" name="Title">
+        <br>
+        <br>
+        <label for="Type">Type:</label>
+        <SELECT>
+            <OPTION Value="Event">Event</OPTION>
+            <OPTION Value="Task">Task</OPTION>
+          </SELECT>
+        <br>
+        <br>
+        <label for="Date">Date:</label>
+        <SELECT>
+            <OPTION Value="January" disabled>January</OPTION>
+            <OPTION Value="February" disabled>February</OPTION>
+            <OPTION Value="March" disabled>March</OPTION>
+            <OPTION Value="April" disabled>April</OPTION>
+            <OPTION Value="May" disabled>May</OPTION>
+            <OPTION Value="June" disabled>June</OPTION>
+            <OPTION Value="July" disabled>July</OPTION>
+            <OPTION Value="August" disabled>August</OPTION>
+            <OPTION Value="September" disabled>September</OPTION>
+            <OPTION Value="October"  disabled>October</OPTION>
+            <OPTION Value="November">November</OPTION>
+            <OPTION Value="December" disabled>December</OPTION>
+
+          </SELECT>
+          <SELECT>
+            <OPTION Value="1" disabled>1</OPTION>
+            <OPTION Value="2" disabled>2</OPTION>
+            <OPTION Value="3" disabled>3</OPTION>
+            <OPTION Value="4" disabled>4</OPTION>
+            <OPTION Value="5" disabled>5</OPTION>
+            <OPTION Value="6" disabled>6</OPTION>
+            <OPTION Value="7" disabled>7</OPTION>
+            <OPTION Value="8" disabled>8</OPTION>
+            <OPTION Value="9" disabled>9</OPTION>
+            <OPTION Value="10" disabled>10</OPTION>
+            <OPTION Value="11" disabled>11</OPTION>
+            <OPTION Value="12" disabled>12</OPTION>
+            <OPTION Value="13" disabled>13</OPTION>
+            <OPTION Value="14" disabled>14</OPTION>
+            <OPTION Value="15" disabled>15</OPTION>
+            <OPTION Value="16" disabled>16</OPTION>
+            <OPTION Value="17" disabled>17</OPTION>
+            <OPTION Value="18" disabled>18</OPTION>
+            <OPTION Value="19" disabled>19</OPTION>
+            <OPTION Value="20" disabled>20</OPTION>
+            <OPTION Value="21">21</OPTION>
+            <OPTION Value="22" disabled>22</OPTION>
+            <OPTION Value="23" disabled>23</OPTION>
+            <OPTION Value="24" disabled>24</OPTION>
+            <OPTION Value="25" disabled>25</OPTION>
+            <OPTION Value="26" disabled>26</OPTION>
+            <OPTION Value="27" disabled>27</OPTION>
+            <OPTION Value="28" disabled>28</OPTION>
+            <OPTION Value="29" disabled>29</OPTION>
+            <OPTION Value="30" disabled>30</OPTION>
+            <OPTION Value="31" disabled>31</OPTION>
+          </SELECT>
+          <SELECT>
+            <OPTION Value="2022">2022</OPTION>
+            <OPTION Value="2023" disabled>2023</OPTION>
+            <OPTION Value="2024" disabled>2024</OPTION>
+            <OPTION Value="2025" disabled>2025</OPTION>
+            <OPTION Value="2026" disabled>2026</OPTION>
+            <OPTION Value="2027" disabled>2027</OPTION>
+            <OPTION Value="2028" disabled>2028</OPTION>
+            <OPTION Value="2029" disabled>2029</OPTION>
+            <OPTION Value="2030" disabled>2030</OPTION>
+          </SELECT>
+
+        <br>
+        <br>
+        <label for="Start Time">Start Time:</label>
+            <SELECT>
+                <OPTION Value="1" disabled>1</OPTION>
+                <OPTION Value="2" disabled>2</OPTION>
+                <OPTION Value="3" disabled>3</OPTION>
+                <OPTION Value="4" disabled>4</OPTION>
+                <OPTION Value="5">5</OPTION>
+                <OPTION Value="6" disabled>6</OPTION>
+                <OPTION Value="7" disabled>7</OPTION>
+                <OPTION Value="8" disabled>8</OPTION>
+                <OPTION Value="9" disabled>9</OPTION>
+                <OPTION Value="10" disabled>10</OPTION>
+                <OPTION Value="11" disabled>11</OPTION>
+                <OPTION Value="12" disabled>12</OPTION>
+            </SELECT>
+            <label for=":">:</label>
+            <SELECT>
+                <OPTION Value="0">0</OPTION>
+                <OPTION Value="1" disabled>1</OPTION>
+                <OPTION Value="2" disabled>2</OPTION>
+                <OPTION Value="3" disabled>3</OPTION>
+                <OPTION Value="4" disabled>4</OPTION>
+                <OPTION Value="5" disabled>5</OPTION>
+            </SELECT>
+            <SELECT>
+                <OPTION Value="0">0</OPTION>
+                <OPTION Value="1" disabled>1</OPTION>
+                <OPTION Value="2" disabled>2</OPTION>
+                <OPTION Value="3" disabled>3</OPTION>
+                <OPTION Value="4" disabled>4</OPTION>
+                <OPTION Value="5" disabled>5</OPTION>
+                <OPTION Value="6" disabled>6</OPTION>
+                <OPTION Value="7" disabled>7</OPTION>
+                <OPTION Value="8" disabled>8</OPTION>
+                <OPTION Value="9" disabled>9</OPTION>
+            </SELECT>
+            <SELECT>
+                <OPTION Value="AM" disabled>AM</OPTION>
+                <OPTION Value="PM">PM</OPTION>
+            </SELECT>
+          <label for="End Time">End Time:</label>
+            <SELECT>
+                <OPTION Value="1" disabled>1</OPTION>
+                <OPTION Value="2" disabled>2</OPTION>
+                <OPTION Value="3" disabled>3</OPTION>
+                <OPTION Value="4" disabled>4</OPTION>
+                <OPTION Value="5" disabled>5</OPTION>
+                <OPTION Value="6" >6</OPTION>
+                <OPTION Value="7" disabled>7</OPTION>
+                <OPTION Value="8" disabled>8</OPTION>
+                <OPTION Value="9" disabled>9</OPTION>
+                <OPTION Value="10" disabled>10</OPTION>
+                <OPTION Value="11" disabled>11</OPTION>
+                <OPTION Value="12" disabled>12</OPTION>
+            </SELECT>
+            <label for=":">:</label>
+            <SELECT>
+                <OPTION Value="0">0</OPTION>
+                <OPTION Value="1" disabled>1</OPTION>
+                <OPTION Value="2" disabled>2</OPTION>
+                <OPTION Value="3" disabled>3</OPTION>
+                <OPTION Value="4" disabled>4</OPTION>
+                <OPTION Value="5" disabled>5</OPTION>
+            </SELECT>
+            <SELECT>
+                <OPTION Value="0">0</OPTION>
+                <OPTION Value="1" disabled>1</OPTION>
+                <OPTION Value="2" disabled>2</OPTION>
+                <OPTION Value="3" disabled>3</OPTION>
+                <OPTION Value="4" disabled>4</OPTION>
+                <OPTION Value="5" disabled>5</OPTION>
+                <OPTION Value="6" disabled>6</OPTION>
+                <OPTION Value="7" disabled>7</OPTION>
+                <OPTION Value="8" disabled>8</OPTION>
+                <OPTION Value="9" disabled>9</OPTION>
+            </SELECT>
+            <SELECT>
+                <OPTION Value="AM" disabled>AM</OPTION>
+                <OPTION Value="PM">PM</OPTION>
+            </SELECT>
+        <br>
+        <br>
+        <label for="Calendar Option">Calendar Option:</label>
+        <SELECT>
+            <OPTION Value="Me">My</OPTION>
+            <OPTION Value="Family">Family's</OPTION>
+            <OPTION Value="MomCal">Mom's</OPTION>
+            <OPTION Value="DadCal">Dad's</OPTION>
+            <OPTION Value="LukeCal">Luke's</OPTION>
+          </SELECT>
+
+        <br>
+        <br>
+        <label for="Participants">Participants:</label>
+        <INPUT id="cb1" TYPE="Checkbox" Name="Calendar" Value ="Me" checked>Me
+        <INPUT id="cb3" TYPE="Checkbox" Name="Calendar" Value ="Luke" checked>Luke
+        <INPUT id="cb4" TYPE="Checkbox" Name="Calendar" Value ="Mom" checked>Mom
+        <INPUT id="cb5" TYPE="Checkbox" Name="Calendar" Value ="Dad" checked>Dad
+        <br>
+        <br>
+        
+        <label for="Location">Location:</Label>
+        <input type="text" id="Location" name="Location">
+        <br>
+        <br>
+        <label for="Additional Information">Additional Information:</Label>
+        <br>
+        <br>
+        <input type="text" id="Additional Information" name="Additional Information" style="width: 70% auto; height:150px">
+        <br>
+        <br>
+    </div>
+    <div class="button">
+        <button type="button" onclick="addFunction()">Add</button>
+
+        <!-- <button type="button" onclick="document.getElementById('<id-of-div>').style.visibility = 'visible'"> Login </button>
+        <button onclick="addFunction()">Add</button> -->
+  
+        <button type="button" onclick="location.href='calendar.html';">Cancel</button>
+    </div>
+  
+    
+    </div>
+    
+    <!--Import Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  </body>
+</html>
