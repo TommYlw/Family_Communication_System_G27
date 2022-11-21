@@ -10,7 +10,7 @@
   
   <body>
     <!--Navigation Bar-->
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark"> <!--set the bar to black background-->
       <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">Family Communication System</span>
         
@@ -18,7 +18,7 @@
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="images/logo.png" alt="User Profile" width="35" height="35">
-            <span class="badge bg-danger badge-dot">1</span>
+            <span class="badge bg-danger badge-dot">1</span> <!--Notification badge-->
           </a>
 
           
@@ -27,7 +27,7 @@
             <li><span class="dropdown-item h5">User</span></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal">
-              Notifications <span class="badge bg-danger badge-dot">1</span></a>
+              Notifications <span class="badge bg-danger">1</span></a>
             </li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="index.html">Log Out</a></li>
@@ -39,12 +39,14 @@
               <div class="modal-content">
                 <!--Title and Close Button-->
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Notification(s)</h1>
+                  <h1 class="modal-title fs-5">Notification(s)</h1>
                 </div>
+                
                 <!--Notification contents, hard-coded at the moment-->
                 <div class="modal-body text-start">
                   Don't forget to buy orange juice tomorrow at Costco @Mom
                 </div>
+                
                 <!--Close Button at the bottom-->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -63,55 +65,59 @@
       <!--Heading-->
       <h2 class="border-bottom pb-1">Welcome!</h2>
   
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <!--
+        .row-cols: enable horizontal layouts
+        .row-cols-lg-*: to determine how many item exists in one row
+      -->
+      <div class="row row-cols row-cols-lg-4 g-4 py-4">
         
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+        <div class="col d-flex">
+          <img src="images/mainPage/calendar.png" style="float: left;" height="40">
           <div>
-            <a href="calendar.html" class="fw-bold mb-0 fs-4">Calendar</a>
+            <a href="calendar.html" class="mb-0 fs-4 fw-bold">Calendar</a>
             <p>To view & edit important family events.</p>
           </div>
         </div>
         
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"/></svg>
+        <div class="col d-flex">
+          <img src="images/mainPage/chat.png" style="float: left;" height="40">
           <div>
-            <h3 class="fw-bold mb-0 fs-4">Chat</h3>
+            <a href="chatting page.html" class="mb-0 fs-4 fw-bold">Chats</a>
             <p>Keep in touch with your family members :)</p>
           </div>
         </div>
         
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"/></svg>
+        <div class="col d-flex">
+          <img src="images/mainPage/documents.png" style="float: left;" height="38">
           <div>
-            <a href="to-do.html" class="fw-bold mb-0 fs-4">Shared Documents</a>
+            <a href="to-do.html" class="mb-0 fs-4 fw-bold">Shared Documents</a>
             <p>See all shared documents with family members.</p>
           </div>
         </div>
         
         
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
+        <div class="col d-flex">
+          <img src="images/mainPage/members.png" style="float: left;" height="40">
           <div>
-            <a href="family memebr information.html" class="fw-bold mb-0 fs-4">Family Members</a>
+            <a href="family memebr information.html" class="mb-0 fs-4 fw-bold">Family Members</a>
             <p>To see all family members.</p>
           </div>
         </div>
         
         <!--
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"/></svg>
+        <div class="col d-flex">
+          <Add img here>
           <div>
-            <h3 class="fw-bold mb-0 fs-4">School</h3>
+             <a href="school.html" class="mb-0 fs-4 fw-bold">School</a>
             <p>Keep in touch with the teacher.</p>
           </div>
         </div>
         -->
         
-        <div class="col d-flex align-items-start">
-          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"/></svg>
+        <div class="col d-flex">
+          <img src="images/mainPage/settings.png" style="float: left;" height="40">
           <div>
-            <a href="settingsPage.html" class="fw-bold mb-0 fs-4">Settings</a>
+            <a href="settingsPage.html" class="mb-0 fs-4 fw-bold">Settings</a>
             <p>Make changes to the system.</p>
           </div>
         </div>
