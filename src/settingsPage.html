@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Family Communication System</title>
+    <!--Import Bootstrap-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <script type="text/javascript">
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "Password Updated";
+        document.getElementById("Old Password").value = "";
+        document.getElementById("New Password").value = "";
+      }
+    </script>
+
+    <style>
+    .boxed {
+      border: 0px solid rgb(0, 0, 0) ;
+      text-align: center;
+    }
+    .boxed2 {
+      border: 0px solid rgb(0, 0, 0) ;
+    }
+
+ 
+    .centerImage {
+      text-align:center;
+      display:block;
+      margin:auto;
+    }
+
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #5f9bcb;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #5f9bcb;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+
+
+    </style>
+  
+  </head>
+  
+  <body>
+    
+    <!--Navigation Bar at the top-->
+    
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Family Communication System</span>
+        
+        <!--User Logo-->
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="images/logo.png" alt="User Profile" width="35" height="35">
+          </a>
+          <ul class="dropdown-menu">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+
+        <!--Dropdown-->
+
+      </div>
+    </nav>
+
+    
+    
+    
+    <!--Dashboard-->
+    <div class="container px- py-5" id="icon-grid">
+      <!--Heading-->
+      <h2 class="pb-2 border-bottom">Settings Page</h2>
+  
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+        
+        <div class="boxed">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+          <div>
+            <img src="familysettings.png" alt="family setting" style="height:120px;">
+            <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Switch Family</h3>
+            <br>
+              <SELECT>
+                <OPTION Value="Smith">Smith Family</OPTION>
+                <OPTION Value="Jones">Jones Family</OPTION>
+              </SELECT>
+            
+          </div>
+        </div>
+        
+        <div class="boxed2">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"/></svg>
+          <div> 
+            <img src="notificationssettings.png" alt="notification setting" style="height:120px;" class="centerImage">
+            <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Notifications</h3>
+            <br> 
+            <div>
+              <INPUT TYPE="Checkbox" Name="Notif" Value ="Chat" style="text-align:left">Chat
+              <br>
+              <INPUT TYPE="Checkbox" Name="Notif" Value ="Calendar" style="text-align:left">Calendar
+              <br>
+              <INPUT TYPE="Checkbox" Name="Notif" Value ="Documents" style="text-align:left">Documents
+              <br>
+            </div>
+          </div>
+        </div>
+        
+        <div class="boxed">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"/></svg>
+          <div>
+            <img src="darkmodesettings.png" alt="dark mode" style="height:120px;">
+            <h3 class="fw-bold mb-0 fs-4">Dark Mode</h3>
+            <br> 
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+    
+          </div>
+        </div>
+        
+        
+        <div class="boxed">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
+          <div>
+            <img src="updateloginsettings.png" alt="update login setting" style="height:120px;">
+            <h3 class="fw-bold mb-0 fs-4">Update Login</h3>
+            <br> 
+            <label for="Old Password">Old Password:</label>
+            <input type="text" id="Old Password" name="Old Password" placeholder="Old Password">
+            <label for="New Password">New Password:</label>
+            <input type="text" id="New Password" name="New Password" placeholder="New Password">
+            <button onclick="myFunction()">Click me</button>
+            <p id="demo"></p>
+            
+          </div>
+        </div>
+              
+      </div>
+    </div>
+    
+    <!--Import Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  </body>
+</html>
