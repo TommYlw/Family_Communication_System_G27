@@ -7,6 +7,24 @@
     <title>Family Communication System</title>
     <!--Import Bootstrap-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <style>
+
+.hyperlink {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+
+.centerImage {
+      text-align:center;
+      display:block;
+      margin:auto;
+    }
+
+  </style>
+
   </head>
   
   <body>
@@ -62,46 +80,49 @@
     
     
     <!--Listed items-->
-    <div class="container px- py-5">
+    <div class="container px- py-5" id="icon-grid">
       <!--Heading-->
-      <h2 class="border-bottom pb-1">Welcome!</h2>
+      <h2 class="border-bottom pb-1"><center>Welcome Smith Family!</center></h2>
+      <br>
+      <br>
+      <br>
   
       <!--
         .row-cols: enable horizontal layouts
         .row-cols-lg-*: to determine how many item exists in one row
       -->
-      <div class="row row-cols row-cols-lg-4 g-4 py-4">
-        
-        <div class="col d-flex">
+      <div class="row">
+
+        <div class="col">
           <img src="images/mainPage/calendar.png" style="float: left;" height="40">
           <div>
-            <a href="calendar.html" class="mb-0 fs-4 fw-bold">Calendar</a>
-            <p>To view & edit important family events.</p>
+            <a href="calendar.html" style="text-align:center" class="hyperlink"> <b><center>Group Chat</center></b></a>
+            <p><center>Sync Your Calendars</center></p>
           </div>
         </div>
         
-        <div class="col d-flex">
+        <div class="col">
           <img src="images/mainPage/chat.png" style="float: left;" height="40">
           <div>
-            <a href="chatting page.html" class="mb-0 fs-4 fw-bold">Chats</a>
-            <p>Keep in touch with your family members :)</p>
+            <a href="chatting page.html" style="text-align:center" class="hyperlink"> <b><center>Chat</center></b></a>
+            <p><center>Stay in Touch</center></p>
           </div>
         </div>
         
-        <div class="col d-flex">
+        <div class="col">
           <img src="images/mainPage/documents.png" style="float: left;" height="38">
           <div>
-            <a href="to-do.html" class="mb-0 fs-4 fw-bold">Shared Documents</a>
-            <p>See all shared documents with family members.</p>
+            <a href="to-do.html" style="text-align:center" class="hyperlink"> <b><center>To-Do's/Docs</center></b></a>
+            <p><center>View Action Items & Documents</center></p>
           </div>
         </div>
         
         
-        <div class="col d-flex">
+        <div class="col">
           <img src="images/mainPage/members.png" style="float: left;" height="40">
           <div>
-            <a href="family memebr information.html" class="mb-0 fs-4 fw-bold">Family Members</a>
-            <p>To see all family members.</p>
+            <a href="family memebr information.html" style="text-align:center" class="hyperlink"> <b><center>Members</center></b></a>
+            <p><center>Family Information</center></p>
           </div>
         </div>
         
@@ -115,11 +136,11 @@
         </div>
         -->
         
-        <div class="col d-flex">
+        <div class="col">
           <img src="images/mainPage/settings.png" style="float: left;" height="40">
           <div>
-            <a href="settingsPage.html" class="mb-0 fs-4 fw-bold">Settings</a>
-            <p>Make changes to the system.</p>
+            <a href="settingsPage.html" style="text-align:center" class="hyperlink"> <b><center>Settings</center></b></a>
+            <p><center>Make Changes to the System/<center></p>
           </div>
         </div>
       </div>
