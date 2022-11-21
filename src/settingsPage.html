@@ -17,20 +17,20 @@
 
     <style>
     .boxed {
-      border: 1px solid rgb(0, 0, 0) ;
+      border: 0px solid rgb(0, 0, 0) ;
       text-align: center;
     }
     .boxed2 {
-      border: 1px solid rgb(0, 0, 0) ;
+      border: 0px solid rgb(0, 0, 0) ;
     }
 
-    .vertical-center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+ 
+    .centerImage {
+      text-align:center;
+      display:block;
+      margin:auto;
     }
+
 
     .switch {
       position: relative;
@@ -125,6 +125,7 @@
         <div class="boxed">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
           <div>
+            <img src="familysettings.png" alt="family setting" style="height:120px;">
             <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Switch Family</h3>
             <br>
               <SELECT>
@@ -138,20 +139,24 @@
         <div class="boxed2">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"/></svg>
           <div> 
+            <img src="notificationssettings.png" alt="notification setting" style="height:120px;" class="centerImage">
             <h3 class="fw-bold mb-0 fs-4" style="text-align:center">Notifications</h3>
             <br> 
-            <INPUT TYPE="Checkbox" Name="Notif" Value ="Chat" style="text-align:left">Chat
-            <br>
-            <INPUT TYPE="Checkbox" Name="Notif" Value ="Calendar" style="text-align:left">Calendar
-            <br>
-            <INPUT TYPE="Checkbox" Name="Notif" Value ="Documents" style="text-align:left">Documents
-            <br>
+            <div>
+              <INPUT TYPE="Checkbox" Name="Notif" Value ="Chat" style="text-align:left">Chat
+              <br>
+              <INPUT TYPE="Checkbox" Name="Notif" Value ="Calendar" style="text-align:left">Calendar
+              <br>
+              <INPUT TYPE="Checkbox" Name="Notif" Value ="Documents" style="text-align:left">Documents
+              <br>
+            </div>
           </div>
         </div>
         
         <div class="boxed">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"/></svg>
           <div>
+            <img src="darkmodesettings.png" alt="dark mode" style="height:120px;">
             <h3 class="fw-bold mb-0 fs-4">Dark Mode</h3>
             <br> 
             <label class="switch">
@@ -166,7 +171,9 @@
         <div class="boxed">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
           <div>
+            <img src="updateloginsettings.png" alt="update login setting" style="height:120px;">
             <h3 class="fw-bold mb-0 fs-4">Update Login</h3>
+            <br> 
             <label for="Old Password">Old Password:</label>
             <input type="text" id="Old Password" name="Old Password" placeholder="Old Password">
             <label for="New Password">New Password:</label>
