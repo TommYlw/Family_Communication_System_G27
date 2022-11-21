@@ -9,24 +9,25 @@
     <link rel="import" href="calendar.html">
 
     <script type="text/javascript">
-        function save() {
-            var title=document.getElementById('Title').value;
-            localStorage.setItem("text", title); // save the item
-            var addtype=document.getElementById('Type').value;
-            localStorage.setItem("text", addType); // save the item
-            var addtype=document.getElementById('Type').value;
-            localStorage.setItem("text", addType); // save the item
-            var calendaroption=document.getElementById('Calender Option').value;
-            localStorage.setItem("text", calendaroption); // save the item
-            var location=document.getElementById('Location').value;
-            localStorage.setItem("text", location); // save the item
-            var additionalinfo=document.getElementById('Additional Information').value;
-            localStorage.setItem("text", additionalinfo); // save the item
-        }
-
         function addFunction (){
-            //document.getElementById("addedEvent").style.visibility = 'visible';
-            window.location.href='calendar.html';
+          // Gather data from inputs
+            var title = document.getElementById('Title').value;
+            var day = document.getElementById('day').value;
+            //make time into string
+            var start_hour = document.getElementById('start_hour').value;
+            var start_min_ten = document.getElementById('start_minute_ten').value;
+            var start_min_one = document.getElementById('start_minute_one').value;
+            var start_ampm = document.getElementById('start_ampm').value;
+            var end_hour = document.getElementById('end_hour').value;
+            var end_min_ten = document.getElementById('end_minute_ten').value;
+            var end_min_one = document.getElementById('end_minute_one').value;
+            var end_ampm = document.getElementById('end_ampm').value;
+            var strTime = start_hour + ":" + start_min_ten + start_min_one + " " + start_ampm + " - " + end_hour + ":" + end_min_ten + end_min_one + " " + end_ampm;
+            title = strTime + "<br>" + title; 
+            //Calendar type
+            var calType = document.getElementById('calendar_type').value;
+            //Final link to main calendar page
+            window.location.href='calendar.html?title=' + title + '&day=' + day + '&type=' + calType;
         }
     </script>
 
@@ -153,37 +154,37 @@
             <OPTION Value="December" disabled>December</OPTION>
 
           </SELECT>
-          <SELECT>
-            <OPTION Value="1" disabled>1</OPTION>
-            <OPTION Value="2" disabled>2</OPTION>
-            <OPTION Value="3" disabled>3</OPTION>
-            <OPTION Value="4" disabled>4</OPTION>
-            <OPTION Value="5" disabled>5</OPTION>
-            <OPTION Value="6" disabled>6</OPTION>
-            <OPTION Value="7" disabled>7</OPTION>
-            <OPTION Value="8" disabled>8</OPTION>
-            <OPTION Value="9" disabled>9</OPTION>
-            <OPTION Value="10" disabled>10</OPTION>
-            <OPTION Value="11" disabled>11</OPTION>
-            <OPTION Value="12" disabled>12</OPTION>
-            <OPTION Value="13" disabled>13</OPTION>
-            <OPTION Value="14" disabled>14</OPTION>
-            <OPTION Value="15" disabled>15</OPTION>
-            <OPTION Value="16" disabled>16</OPTION>
-            <OPTION Value="17" disabled>17</OPTION>
-            <OPTION Value="18" disabled>18</OPTION>
-            <OPTION Value="19" disabled>19</OPTION>
-            <OPTION Value="20" disabled>20</OPTION>
+          <SELECT id="day">
+            <OPTION Value="1">1</OPTION>
+            <OPTION Value="2">2</OPTION>
+            <OPTION Value="3">3</OPTION>
+            <OPTION Value="4">4</OPTION>
+            <OPTION Value="5">5</OPTION>
+            <OPTION Value="6">6</OPTION>
+            <OPTION Value="7">7</OPTION>
+            <OPTION Value="8">8</OPTION>
+            <OPTION Value="9">9</OPTION>
+            <OPTION Value="10">10</OPTION>
+            <OPTION Value="11">11</OPTION>
+            <OPTION Value="12">12</OPTION>
+            <OPTION Value="13">13</OPTION>
+            <OPTION Value="14">14</OPTION>
+            <OPTION Value="15">15</OPTION>
+            <OPTION Value="16">16</OPTION>
+            <OPTION Value="17">17</OPTION>
+            <OPTION Value="18">18</OPTION>
+            <OPTION Value="19">19</OPTION>
+            <OPTION Value="20">20</OPTION>
             <OPTION Value="21">21</OPTION>
-            <OPTION Value="22" disabled>22</OPTION>
-            <OPTION Value="23" disabled>23</OPTION>
-            <OPTION Value="24" disabled>24</OPTION>
-            <OPTION Value="25" disabled>25</OPTION>
-            <OPTION Value="26" disabled>26</OPTION>
-            <OPTION Value="27" disabled>27</OPTION>
-            <OPTION Value="28" disabled>28</OPTION>
-            <OPTION Value="29" disabled>29</OPTION>
-            <OPTION Value="30" disabled>30</OPTION>
+            <OPTION Value="22">22</OPTION>
+            <OPTION Value="23">23</OPTION>
+            <OPTION Value="24">24</OPTION>
+            <OPTION Value="25">25</OPTION>
+            <OPTION Value="26">26</OPTION>
+            <OPTION Value="27">27</OPTION>
+            <OPTION Value="28">28</OPTION>
+            <OPTION Value="29">29</OPTION>
+            <OPTION Value="30">30</OPTION>
             <OPTION Value="31" disabled>31</OPTION>
           </SELECT>
           <SELECT>
@@ -201,103 +202,96 @@
         <br>
         <br>
         <label for="Start Time">Start Time:</label>
-            <SELECT>
-                <OPTION Value="1" disabled>1</OPTION>
-                <OPTION Value="2" disabled>2</OPTION>
-                <OPTION Value="3" disabled>3</OPTION>
-                <OPTION Value="4" disabled>4</OPTION>
+            <SELECT id="start_hour">
+                <OPTION Value="1">1</OPTION>
+                <OPTION Value="2">2</OPTION>
+                <OPTION Value="3">3</OPTION>
+                <OPTION Value="4">4</OPTION>
                 <OPTION Value="5">5</OPTION>
-                <OPTION Value="6" disabled>6</OPTION>
-                <OPTION Value="7" disabled>7</OPTION>
-                <OPTION Value="8" disabled>8</OPTION>
-                <OPTION Value="9" disabled>9</OPTION>
-                <OPTION Value="10" disabled>10</OPTION>
-                <OPTION Value="11" disabled>11</OPTION>
-                <OPTION Value="12" disabled>12</OPTION>
+                <OPTION Value="6">6</OPTION>
+                <OPTION Value="7">7</OPTION>
+                <OPTION Value="8">8</OPTION>
+                <OPTION Value="9">9</OPTION>
+                <OPTION Value="10">10</OPTION>
+                <OPTION Value="11">11</OPTION>
+                <OPTION Value="12">12</OPTION>
             </SELECT>
             <label for=":">:</label>
-            <SELECT>
+            <SELECT id="start_minute_ten">
                 <OPTION Value="0">0</OPTION>
-                <OPTION Value="1" disabled>1</OPTION>
-                <OPTION Value="2" disabled>2</OPTION>
-                <OPTION Value="3" disabled>3</OPTION>
-                <OPTION Value="4" disabled>4</OPTION>
-                <OPTION Value="5" disabled>5</OPTION>
+                <OPTION Value="1">1</OPTION>
+                <OPTION Value="2">2</OPTION>
+                <OPTION Value="3">3</OPTION>
+                <OPTION Value="4">4</OPTION>
+                <OPTION Value="5">5</OPTION>
             </SELECT>
-            <SELECT>
+            <SELECT id="start_minute_one">
                 <OPTION Value="0">0</OPTION>
-                <OPTION Value="1" disabled>1</OPTION>
-                <OPTION Value="2" disabled>2</OPTION>
-                <OPTION Value="3" disabled>3</OPTION>
-                <OPTION Value="4" disabled>4</OPTION>
-                <OPTION Value="5" disabled>5</OPTION>
-                <OPTION Value="6" disabled>6</OPTION>
-                <OPTION Value="7" disabled>7</OPTION>
-                <OPTION Value="8" disabled>8</OPTION>
-                <OPTION Value="9" disabled>9</OPTION>
+                <OPTION Value="1">1</OPTION>
+                <OPTION Value="2">2</OPTION>
+                <OPTION Value="3">3</OPTION>
+                <OPTION Value="4">4</OPTION>
+                <OPTION Value="5">5</OPTION>
+                <OPTION Value="6">6</OPTION>
+                <OPTION Value="7">7</OPTION>
+                <OPTION Value="8">8</OPTION>
+                <OPTION Value="9">9</OPTION>
             </SELECT>
-            <SELECT>
-                <OPTION Value="AM" disabled>AM</OPTION>
+            <SELECT id="start_ampm">
+                <OPTION Value="AM">AM</OPTION>
                 <OPTION Value="PM">PM</OPTION>
             </SELECT>
           <label for="End Time">End Time:</label>
-            <SELECT>
-                <OPTION Value="1" disabled>1</OPTION>
-                <OPTION Value="2" disabled>2</OPTION>
-                <OPTION Value="3" disabled>3</OPTION>
-                <OPTION Value="4" disabled>4</OPTION>
-                <OPTION Value="5" disabled>5</OPTION>
+            <SELECT id="end_hour">
+                <OPTION Value="1">1</OPTION>
+                <OPTION Value="2">2</OPTION>
+                <OPTION Value="3">3</OPTION>
+                <OPTION Value="4">4</OPTION>
+                <OPTION Value="5">5</OPTION>
                 <OPTION Value="6" >6</OPTION>
-                <OPTION Value="7" disabled>7</OPTION>
-                <OPTION Value="8" disabled>8</OPTION>
-                <OPTION Value="9" disabled>9</OPTION>
-                <OPTION Value="10" disabled>10</OPTION>
-                <OPTION Value="11" disabled>11</OPTION>
-                <OPTION Value="12" disabled>12</OPTION>
+                <OPTION Value="7">7</OPTION>
+                <OPTION Value="8">8</OPTION>
+                <OPTION Value="9">9</OPTION>
+                <OPTION Value="10">10</OPTION>
+                <OPTION Value="11">11</OPTION>
+                <OPTION Value="12">12</OPTION>
             </SELECT>
             <label for=":">:</label>
-            <SELECT>
+            <SELECT id="end_minute_ten">
                 <OPTION Value="0">0</OPTION>
-                <OPTION Value="1" disabled>1</OPTION>
-                <OPTION Value="2" disabled>2</OPTION>
-                <OPTION Value="3" disabled>3</OPTION>
-                <OPTION Value="4" disabled>4</OPTION>
-                <OPTION Value="5" disabled>5</OPTION>
+                <OPTION Value="1">1</OPTION>
+                <OPTION Value="2">2</OPTION>
+                <OPTION Value="3">3</OPTION>
+                <OPTION Value="4">4</OPTION>
+                <OPTION Value="5">5</OPTION>
             </SELECT>
-            <SELECT>
+            <SELECT id="end_minute_one">
                 <OPTION Value="0">0</OPTION>
-                <OPTION Value="1" disabled>1</OPTION>
-                <OPTION Value="2" disabled>2</OPTION>
-                <OPTION Value="3" disabled>3</OPTION>
-                <OPTION Value="4" disabled>4</OPTION>
-                <OPTION Value="5" disabled>5</OPTION>
-                <OPTION Value="6" disabled>6</OPTION>
-                <OPTION Value="7" disabled>7</OPTION>
-                <OPTION Value="8" disabled>8</OPTION>
-                <OPTION Value="9" disabled>9</OPTION>
+                <OPTION Value="1">1</OPTION>
+                <OPTION Value="2">2</OPTION>
+                <OPTION Value="3">3</OPTION>
+                <OPTION Value="4">4</OPTION>
+                <OPTION Value="5">5</OPTION>
+                <OPTION Value="6">6</OPTION>
+                <OPTION Value="7">7</OPTION>
+                <OPTION Value="8">8</OPTION>
+                <OPTION Value="9">9</OPTION>
             </SELECT>
-            <SELECT>
-                <OPTION Value="AM" disabled>AM</OPTION>
+            <SELECT id="end_ampm">
+                <OPTION Value="AM">AM</OPTION>
                 <OPTION Value="PM">PM</OPTION>
             </SELECT>
         <br>
         <br>
         <label for="Calendar Option">Calendar Option:</label>
-        <SELECT>
-            <OPTION Value="Me">My</OPTION>
-            <OPTION Value="Family">Family's</OPTION>
-            <OPTION Value="MomCal">Mom's</OPTION>
-            <OPTION Value="DadCal">Dad's</OPTION>
-            <OPTION Value="LukeCal">Luke's</OPTION>
+        <SELECT id="calendar_type">
+            <OPTION Value="eventMe">My</OPTION>
+            <OPTION Value="eventFamily">Family's</OPTION>
+            <OPTION Value="eventMom">Mom's</OPTION>
+            <OPTION Value="eventDad">Dad's</OPTION>
+            <OPTION Value="eventLuke">Luke's</OPTION>
           </SELECT>
 
-        <br>
-        <br>
-        <label for="Participants">Participants:</label>
-        <INPUT id="cb1" TYPE="Checkbox" Name="Calendar" Value ="Me" checked>Me
-        <INPUT id="cb3" TYPE="Checkbox" Name="Calendar" Value ="Luke" checked>Luke
-        <INPUT id="cb4" TYPE="Checkbox" Name="Calendar" Value ="Mom" checked>Mom
-        <INPUT id="cb5" TYPE="Checkbox" Name="Calendar" Value ="Dad" checked>Dad
         <br>
         <br>
         

@@ -12,6 +12,19 @@
           document.getElementById("addedEvent").style.visibility = 'visible';
           window.location.href='addItem.html';
       }
+
+      function loadEvent (){
+        var url = new URL(window.location.href);
+        var title = url.searchParams.get("title");
+        var day = url.searchParams.get("day");
+        var calType = url.searchParams.get("type");
+        //Add new event
+        var newEvent = document.createElement('div');
+        newEvent.className = calType;
+        newEvent.textContent = title;
+        document.getElementById(day).appendChild(newEvent);
+        document.getElementById("addedEvent").textContent = title;
+      }
     </script>
 
 
@@ -47,6 +60,40 @@
         right: 5px;
         bottom: 5px;
       }
+
+      .eventLuke{
+        border: 1px solid rgb(0, 0, 0) ;
+        text-align: left;
+        background-color:#c76358;
+        position: relative;
+        top: 5px;
+        left: 0px;
+        right: 5px;
+        bottom: 5px;
+      }
+
+      .eventMom{
+        border: 1px solid rgb(0, 0, 0) ;
+        text-align: left;
+        background-color:#87d77d;
+        position: relative;
+        top: 5px;
+        left: 0px;
+        right: 5px;
+        bottom: 5px;
+      }
+
+      .eventDad{
+        border: 1px solid rgb(0, 0, 0) ;
+        text-align: left;
+        background-color:#e1d774;
+        position: relative;
+        top: 5px;
+        left: 0px;
+        right: 5px;
+        bottom: 5px;
+      }
+
       .eventAdd{
         border: 1px solid rgb(0, 0, 0) ;
         text-align: left;
@@ -56,7 +103,6 @@
         left: 0px;
         right: 5px;
         bottom: 5px;
-        visibility: hidden;
       }
 
       .users {
@@ -91,7 +137,7 @@
 
   </head>
   
-  <body>
+  <body onload="loadEvent()">
     
     <!--Navigation Bar at the top-->
     
@@ -123,9 +169,9 @@
     <div class="users">
       <INPUT id="cb1" TYPE="Checkbox" Name="Calendar" Value ="Me" checked>Me
       <INPUT id="cb2" TYPE="Checkbox" Name="Calendar" Value ="Family" checked>Family
-      <INPUT id="cb3" TYPE="Checkbox" Name="Calendar" Value ="Luke">Luke
-      <INPUT id="cb4" TYPE="Checkbox" Name="Calendar" Value ="Mom">Mom
-      <INPUT id="cb5" TYPE="Checkbox" Name="Calendar" Value ="Dad">Dad
+      <INPUT id="cb3" TYPE="Checkbox" Name="Calendar" Value ="Luke" checked>Luke
+      <INPUT id="cb4" TYPE="Checkbox" Name="Calendar" Value ="Mom" checked>Mom
+      <INPUT id="cb5" TYPE="Checkbox" Name="Calendar" Value ="Dad" checked>Dad
     </div>
 
     <h3 class="fw-bold mb-0 fs-4" style="text-align:center">November 2022</h3>
@@ -138,101 +184,101 @@
         </div>
         <div class="col">
           1
-          <div class="eventMe">
+          <div id="1" class="eventMe">
             8:00-9:00pm Movie Night with Sara
           </div>
         </div>
-        <div class="col">
+        <div id="2" class="col">
           2
         </div>
-        <div class="col">
+        <div id="3" class="col">
           3
         </div>
-        <div class="col">
+        <div id="4" class="col">
           4
           <div class="eventFamily">
             5:00-7:00pm Trip to the park
           </div>
         </div>
-        <div class="col">
+        <div id="5" class="col">
           5
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div id="6" class="col">
           6
         </div>
-        <div class="col">
+        <div id="7" class="col">
           7
         </div>
-        <div class="col">
+        <div id="8" class="col">
           8
         </div>
-        <div class="col">
+        <div id="9" class="col">
           9
         </div>
-        <div class="col">
+        <div id="10" class="col">
           10
         </div>
-        <div class="col">
+        <div id="11" class="col">
           11
         </div>
-        <div class="col">
+        <div id="12" class="col">
           12
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div id="13" class="col">
           13
         </div>
-        <div class="col">
+        <div id="14" class="col">
           14
           <div class="eventMe">
             2:00-3:00pm Meeting with Manager 
           </div>
         </div>
-        <div class="col">
+        <div id="15" class="col">
           15
         </div>
-        <div class="col">
+        <div id="16" class="col">
           16
         </div>
-        <div class="col">
+        <div id="17" class="col">
           17
         </div>
-        <div class="col">
+        <div id="18" class="col">
           18
         </div>
-        <div class="col">
+        <div id="19" class="col">
           19
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div id="20" class="col">
           20
         </div>
-        <div class="col">
+        <div id="21" class="col">
           21
           <div id="addedEvent" class="eventAdd">
             5:00-6:00pm Dinner with Soccer Team 
           </div>
         </div>
-        <div class="col">
+        <div id="22" class="col">
           22
         </div>
-        <div class="col">
+        <div id="23" class="col">
           23
           <div class="eventMe">
             4:30-5:00pm Dinner with Soccer Team 
           </div>
         </div>
-        <div class="col">
+        <div id="24" class="col">
           24
         </div>
-        <div class="col">
+        <div id="25" class="col">
           25
         </div>
-        <div class="col">
+        <div id="26" class="col">
           26
           <div class="eventFamily">
             6:00-7:00pm Dinner at Grandparents
@@ -240,16 +286,16 @@
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div id="27" class="col">
           27
         </div>
-        <div class="col">
+        <div id="28" class="col">
           28
         </div>
-        <div class="col">
+        <div id="29" class="col">
           29
         </div>
-        <div class="col">
+        <div id="30" class="col">
           30
         </div>
         <div class="col">
