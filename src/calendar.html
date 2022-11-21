@@ -9,7 +9,6 @@
 
     <script type="text/javascript">
       function gotoadd (){
-          document.getElementById("addedEvent").style.visibility = 'visible';
           window.location.href='addItem.html';
       }
 
@@ -21,9 +20,37 @@
         //Add new event
         var newEvent = document.createElement('div');
         newEvent.className = calType;
-        newEvent.textContent = title;
+        newEvent.innerHTML = title;
         document.getElementById(day).appendChild(newEvent);
-        document.getElementById("addedEvent").textContent = title;
+        //Add event listeners to checkboxes
+        document.getElementById("cb1").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb2").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb3").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb4").addEventListener('change', onCheckboxChange);
+        document.getElementById("cb5").addEventListener('change', onCheckboxChange);
+      }
+
+      function onCheckboxChange(event) {
+        var targetType = "eventMe";
+        if (event.currentTarget.id == "cb2") {
+          targetType = "eventFamily";
+        }
+        else if (event.currentTarget.id == "cb3") {
+          targetType = "eventLuke";
+        }
+        else if (event.currentTarget.id == "cb4") {
+          targetType = "eventMom";
+        }
+        else if (event.currentTarget.id == "cb5") {
+          targetType = "eventDad";
+        }
+        const calEvents = document.getElementsByClassName(targetType);
+        for (let i = 0; i < calEvents.length; i++) {
+          if (event.currentTarget.checked)
+            calEvents[i].style.visibility = "visible";
+          else
+            calEvents[i].style.visibility = "hidden";
+        }
       }
     </script>
 
@@ -259,9 +286,6 @@
         </div>
         <div id="21" class="col">
           21
-          <div id="addedEvent" class="eventAdd">
-            5:00-6:00pm Dinner with Soccer Team 
-          </div>
         </div>
         <div id="22" class="col">
           22
